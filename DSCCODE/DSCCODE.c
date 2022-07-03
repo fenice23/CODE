@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+#if 0
 //#include <vld.h>
 //#include <stdio.h>
 //#include <math.h>
@@ -330,6 +331,68 @@
 //		printf("\n");
 //	}
 //}
+//int missingNumber(int* nums, int numsSize) {
+//	assert(nums != NULL);
+//	int t = 0;
+//	for (int i = 0; i < numsSize; i++)  t ^= nums[i];
+//	for (int i = 0; i < numsSize + 1; i++)  t ^= i;
+//	return t;
+//}
+//void test8() {
+//	int arr[] = { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
+//	printf("ret = %d\n", missingNumber(arr, (int)(sizeof(arr) / sizeof(arr[0]))));
+//}
+//int* singleNumbers(int* nums, int numsSize, int* returnSize) {
+//	assert(nums && returnSize);
+//	*returnSize = 2;
+//	int* p = (int*)malloc(*returnSize * sizeof(int));
+//	p[0] = 0;
+//	p[1] = 0;
+//	int tmp = 0;
+//	int pos = 0;
+//	for (int i = 0; i < numsSize; i++)  tmp ^= nums[i];
+//	for (int i = 0; i < 32; i++) {
+//		if ((1 << i) & tmp) {
+//			pos = i;
+//			break;
+//		}
+//	}
+//	for (int i = 0; i < numsSize; i++) {
+//		if ((1 << pos) & nums[i])   p[1] ^= nums[i];
+//		else    p[0] ^= nums[i];
+//	}
+//	return p;
+//}
+////class Solution {
+////public:
+////    vector<int> singleNumbers(vector<int>& nums) {
+////        int t = 0;
+////        int pos = 0;
+////        int X = 0;
+////        for (auto x : nums) t ^= x;
+////        for (int i = 0; i < 32; i++){
+////            if ((1 << i) & t){
+////                pos = i;
+////                break;
+////            }
+////        }
+////        for (auto x : nums){
+////            if ((1 << pos) & x) X ^= x;
+////        }
+////        return { X, t ^ X };
+////    }
+////};
+//void test9() {
+//	int arr[] = { 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4 };
+//	int n = 0;
+//	int* p = singleNumbers(arr, (int)(sizeof(arr) / sizeof(arr[0])), &n);
+//	for (int i = 0; i < n; i++) {
+//		printf("%d ", p[i]);
+//	}
+//	printf("\n");
+//	free(p);
+//	p = NULL;
+//}
 //void test() {
 //	//test0();
 //	//test1();
@@ -339,6 +402,8 @@
 //	//test5();
 //	//test6();
 //	//test7();
+//	//test8();
+//	test9();
 //}
 //int main() {
 //	//时间复杂度不计算时间,计算大概的运行次数
@@ -347,3 +412,4 @@
 //	test();
 //	return 0;
 //}
+#endif
