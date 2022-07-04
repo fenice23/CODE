@@ -412,49 +412,113 @@
 //	test();
 //	return 0;
 //}
+//#include "SeqList.h"
+//void test() {
+//	SL s;
+//	SeqListInit(&s);
+//	SeqListPushBack(&s, 1);
+//	SeqListPushBack(&s, 2);
+//	SeqListPushBack(&s, 3);
+//	SeqListPushBack(&s, 4);
+//	SeqListPushBack(&s, 5);
+//	SeqListPushBack(&s, 6);
+//	SeqListPushBack(&s, 7);
+//	SeqListPushBack(&s, 8);
+//	SeqListPushBack(&s, 9);
+//	SeqListPrint(&s);
+//	SeqListPopBack(&s);
+//	SeqListPopBack(&s);
+//	SeqListPopBack(&s);
+//	SeqListPrint(&s);
+//	SeqListPushFront(&s, -1);
+//	SeqListPushFront(&s, -2);
+//	SeqListPushFront(&s, -3);
+//	SeqListPrint(&s);
+//	SeqListPopFront(&s);
+//	SeqListPopFront(&s);
+//	SeqListPopFront(&s);
+//	SeqListPrint(&s);
+//	SeqListPushBack(&s, -100);
+//	SeqListPushBack(&s, -200);
+//	SeqListPrint(&s);
+//	SeqListBubbleSort(&s);
+//	SeqListPrint(&s);
+//	//int pos = SeqListFind(&s, 5);
+//	int pos = SeqListBinaryFind(&s, 5);
+//	if (-1 == pos) {
+//		printf("find none!\n");
+//	}
+//	else {
+//		printf("找着了,下标是%d\n", pos);
+//		s._a[pos] = 666;
+//		SeqListPrint(&s);
+//		SeqListErase(&s, pos);
+//		SeqListPrint(&s);
+//	}
+//	SeqListDestroy(&s);
+//}
+//int main() {
+//	//顺序表是一个可以动态增长的数组,数据在数组中必须是连续的
+//	//缺点:中间位置插入删除,头部插入删除效率低,因为时间复杂度O(N),但是这个问题不算大,因为顺序表常用的操作是尾插尾删效率高时间复杂度O(1)
+//	//	  增容有一定的消耗,而且有一定的空间浪费
+//	//优点:支持随机访问(最大的优点)		缓存命中率高(系统预加载机制和顺序表的内存连续存储(有了预加载的优势)导致的)
+//	test();
+//	return 0;
+//}
 #endif
-#include "SeqList.h"
+#include "SList.h"
 void test() {
-	SL s;
-	SeqListInit(&s);
-	SeqListPushBack(&s, 1);
-	SeqListPushBack(&s, 2);
-	SeqListPushBack(&s, 3);
-	SeqListPushBack(&s, 4);
-	SeqListPushBack(&s, 5);
-	SeqListPushBack(&s, 6);
-	SeqListPushBack(&s, 7);
-	SeqListPushBack(&s, 8);
-	SeqListPushBack(&s, 9);
-	SeqListPrint(&s);
-	SeqListPopBack(&s);
-	SeqListPopBack(&s);
-	SeqListPopBack(&s);
-	SeqListPrint(&s);
-	SeqListPushFront(&s, -1);
-	SeqListPushFront(&s, -2);
-	SeqListPushFront(&s, -3);
-	SeqListPrint(&s);
-	SeqListPopFront(&s);
-	SeqListPopFront(&s);
-	SeqListPopFront(&s);
-	SeqListPrint(&s);
-	SeqListPushBack(&s, -100);
-	SeqListPushBack(&s, -200);
-	SeqListPrint(&s);
-	SeqListBubbleSort(&s);
-	SeqListPrint(&s);
-	//int pos = SeqListFind(&s, 5);
-	int pos = SeqListBinaryFind(&s, 5);
-	if (-1 == pos) {
-		printf("find none!\n");
+	//SListNode* pList;
+	//SListInit(&pList);
+	////SListPopBack(&pList);
+	//SListPushBack(&pList, 1);
+	//SListPushBack(&pList, 2);
+	//SListPushBack(&pList, 3);
+	//SListPushBack(&pList, 4);
+	//SListPrint(pList);
+	//printf("%d\n", (int)SListSize(pList));
+	//SListPopBack(&pList);
+	//SListPopBack(&pList);
+	//SListPopBack(&pList);
+	//SListPopBack(&pList);
+	////SListPopBack(&pList);
+	//SListPrint(pList);
+	//SListPushFront(&pList, 1);
+	//SListPushFront(&pList, 2);
+	//SListPushFront(&pList, 3);
+	//SListPushFront(&pList, 4);
+	//SListPrint(pList);
+	//SListPopBack(&pList);
+	//SListPrint(pList);
+	//SListPopFront(&pList);
+	//SListPrint(pList);
+	//SListPopFront(&pList);
+	//SListPrint(pList);
+	//SListPopFront(&pList);
+	//SListPrint(pList);
+	//SListPopFront(&pList);
+	//SListPrint(pList);
+	//SListDestroy(&pList);
+	//pList = NULL;
+
+	SListNode* pList;
+	SListInit(&pList);
+	SListPushBack(&pList, 1);
+	SListPushBack(&pList, 2);
+	SListPushBack(&pList, 3);
+	SListPushBack(&pList, 4);
+	SListPrint(pList);
+	SListNode* pFind = SListFind(pList, 4);
+	if (pFind) {
+		pFind->_data = 888;
+		SListPrint(pList);
+		SListInsert(pFind, 9);
+		SListPrint(pList);
+		SListErase(pFind);
+		SListPrint(pList);
 	}
-	else {
-		printf("找着了,下标是%d\n", pos);
-		s._a[pos] = 666;
-		SeqListPrint(&s);
-	}
-	SeqListDestroy(&s);
+	SListDestroy(&pList);
+	pList = NULL;
 }
 int main() {
 	test();
