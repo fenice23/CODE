@@ -465,62 +465,118 @@
 //	test();
 //	return 0;
 //}
+//#include "SList.h"
+//void test() {
+//	//SListNode* pList;
+//	//SListInit(&pList);
+//	////SListPopBack(&pList);
+//	//SListPushBack(&pList, 1);
+//	//SListPushBack(&pList, 2);
+//	//SListPushBack(&pList, 3);
+//	//SListPushBack(&pList, 4);
+//	//SListPrint(pList);
+//	//printf("%d\n", (int)SListSize(pList));
+//	//SListPopBack(&pList);
+//	//SListPopBack(&pList);
+//	//SListPopBack(&pList);
+//	//SListPopBack(&pList);
+//	////SListPopBack(&pList);
+//	//SListPrint(pList);
+//	//SListPushFront(&pList, 1);
+//	//SListPushFront(&pList, 2);
+//	//SListPushFront(&pList, 3);
+//	//SListPushFront(&pList, 4);
+//	//SListPrint(pList);
+//	//SListPopBack(&pList);
+//	//SListPrint(pList);
+//	//SListPopFront(&pList);
+//	//SListPrint(pList);
+//	//SListPopFront(&pList);
+//	//SListPrint(pList);
+//	//SListPopFront(&pList);
+//	//SListPrint(pList);
+//	//SListPopFront(&pList);
+//	//SListPrint(pList);
+//	//SListDestroy(&pList);
+//	//pList = NULL;
+//
+//	SListNode* pList;
+//	SListInit(&pList);
+//	SListPushBack(&pList, 1);
+//	SListPushBack(&pList, 2);
+//	SListPushBack(&pList, 3);
+//	SListPushBack(&pList, 4);
+//	SListPrint(pList);
+//	SListNode* pFind = SListFind(pList, 4);
+//	if (pFind) {
+//		pFind->_data = 888;
+//		SListPrint(pList);
+//		SListInsert(pFind, 9);
+//		SListPrint(pList);
+//		SListErase(pFind);
+//		SListPrint(pList);
+//	}
+//	SListDestroy(&pList);
+//	pList = NULL;
+//}
+//int main() {
+//	test();
+//	return 0;
+//}
+//#include <stdio.h>
+//#include <assert.h>
+//#include <stdlib.h>
+// struct ListNode {
+//     int val;
+//     struct ListNode *next;
+// };
+//struct ListNode* removeElements(struct ListNode* head, int val) {
+//	struct ListNode* dummy = (struct ListNode*)malloc(1 * sizeof(struct ListNode));
+//	if (NULL == dummy) {
+//		perror("removeElements dummy malloc");
+//		exit(-1);
+//	}
+//	dummy->next = head;
+//	struct ListNode* cur = head;
+//	struct ListNode* pre = dummy;
+//	while (cur) {
+//		if (cur->val == val) {
+//			pre->next = cur->next;
+//			free(cur);
+//			cur = pre->next;
+//		}
+//		else {
+//			pre = cur;
+//			cur = cur->next;
+//		}
+//	}
+//	struct ListNode* pRet = dummy->next;
+//	free(dummy);
+//	dummy = NULL;
+//	return pRet;
+//}
+//void test() {//IDE中快速构建链表OJ测试用例示例:
+//	typedef struct ListNode Node;
+//	Node* n1 = (Node*)malloc(sizeof(Node));
+//	assert(n1);
+//	Node* n2 = (Node*)malloc(sizeof(Node));
+//	assert(n2);
+//	Node* n3 = (Node*)malloc(sizeof(Node));
+//	assert(n3);
+//	Node* n4 = (Node*)malloc(sizeof(Node));
+//	assert(n4);
+//	n1->val = 6;
+//	n2->val = 6;
+//	n3->val = 4;
+//	n4->val = 6;
+//	n1->next = n2;
+//	n2->next = n3;
+//	n3->next = n4;
+//	n4->next = NULL;
+//	Node* head = removeElements(n1, 6);
+//}
+//int main() {
+//	test();
+//	return 0;
+//}
 #endif
-#include "SList.h"
-void test() {
-	//SListNode* pList;
-	//SListInit(&pList);
-	////SListPopBack(&pList);
-	//SListPushBack(&pList, 1);
-	//SListPushBack(&pList, 2);
-	//SListPushBack(&pList, 3);
-	//SListPushBack(&pList, 4);
-	//SListPrint(pList);
-	//printf("%d\n", (int)SListSize(pList));
-	//SListPopBack(&pList);
-	//SListPopBack(&pList);
-	//SListPopBack(&pList);
-	//SListPopBack(&pList);
-	////SListPopBack(&pList);
-	//SListPrint(pList);
-	//SListPushFront(&pList, 1);
-	//SListPushFront(&pList, 2);
-	//SListPushFront(&pList, 3);
-	//SListPushFront(&pList, 4);
-	//SListPrint(pList);
-	//SListPopBack(&pList);
-	//SListPrint(pList);
-	//SListPopFront(&pList);
-	//SListPrint(pList);
-	//SListPopFront(&pList);
-	//SListPrint(pList);
-	//SListPopFront(&pList);
-	//SListPrint(pList);
-	//SListPopFront(&pList);
-	//SListPrint(pList);
-	//SListDestroy(&pList);
-	//pList = NULL;
-
-	SListNode* pList;
-	SListInit(&pList);
-	SListPushBack(&pList, 1);
-	SListPushBack(&pList, 2);
-	SListPushBack(&pList, 3);
-	SListPushBack(&pList, 4);
-	SListPrint(pList);
-	SListNode* pFind = SListFind(pList, 4);
-	if (pFind) {
-		pFind->_data = 888;
-		SListPrint(pList);
-		SListInsert(pFind, 9);
-		SListPrint(pList);
-		SListErase(pFind);
-		SListPrint(pList);
-	}
-	SListDestroy(&pList);
-	pList = NULL;
-}
-int main() {
-	test();
-	return 0;
-}
