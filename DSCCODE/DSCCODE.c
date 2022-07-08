@@ -579,4 +579,118 @@
 //	test();
 //	return 0;
 //}
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdbool.h>
+//#include <assert.h>
+//#include <vld.h>
+//typedef struct ListNode {
+//	int val;
+//	struct ListNode* next;
+//} Node;
+//struct ListNode* deleteDuplicates(struct ListNode* head) {
+//	if (!head || !head->next)   return head;
+//	Node * dummy = (Node*)malloc(sizeof(Node));
+//	dummy->next = head;
+//	Node * cur = dummy->next;
+//	while (cur) {
+//		Node* next = cur->next;
+//		while (next != NULL && next->val == cur->val) {
+//			Node* pt = next;
+//			next = next->next;
+//			free(pt);
+//			pt = NULL;
+//			cur->next = next;
+//		}
+//		cur = next;
+//	}
+//	Node* res = dummy->next;
+//	free(dummy);
+//	dummy = NULL;
+//	return res;
+//}
+////struct ListNode* deleteDuplicates(struct ListNode* head) {
+////	if (!head || !head->next)   return head;
+////	Node * dummy = (Node*)malloc(sizeof(Node));
+////	assert(dummy);
+////	dummy->next = head;
+////	Node * prev = dummy;
+////	Node * cur = prev->next;
+////	bool flag = false;
+////	while (cur) {
+////		flag = false;
+////		Node* next = cur->next;
+////		while (next != NULL && next->val == cur->val) {
+////			Node* pt = next;
+////			next = next->next;
+////			free(pt);
+////			pt = NULL;
+////			flag = true;
+////		}
+////		if (flag) {
+////			free(cur);
+////			cur = cur->next;
+////			prev->next = next;
+////			cur = next;
+////		}
+////		else {
+////			prev = cur;
+////			cur = next;
+////		}
+////	}
+////	Node* res = dummy->next;
+////	free(dummy);
+////	dummy = NULL;
+////	return res;
+////}
+//void test0() {
+//	Node* n1 = (Node*)malloc(sizeof(Node));
+//	assert(n1);
+//	n1->val = 1;
+//	Node* n2 = (Node*)malloc(sizeof(Node));
+//	assert(n2);
+//	n2->val = 1;
+//	Node* n3 = (Node*)malloc(sizeof(Node));
+//	assert(n3);
+//	n3->val = 1;
+//	Node* n4 = (Node*)malloc(sizeof(Node));
+//	assert(n4);
+//	n4->val = 3;
+//	Node* n5 = (Node*)malloc(sizeof(Node));
+//	assert(n5);
+//	n5->val = 3;
+//	Node* n6 = (Node*)malloc(sizeof(Node));
+//	assert(n6);
+//	n6->val = 4;
+//	Node* n7 = (Node*)malloc(sizeof(Node));
+//	assert(n7);
+//	n7->val = 4;
+//	Node* n8 = (Node*)malloc(sizeof(Node));
+//	assert(n8);
+//	n8->val = 5;
+//	Node* n9 = (Node*)malloc(sizeof(Node));
+//	assert(n9);
+//	n9->val = 6;
+//	Node* n10 = (Node*)malloc(sizeof(Node));
+//	assert(n10);
+//	n10->val = 6;
+//	n1->next = n2;
+//	n2->next = n3;
+//	n3->next = n4;
+//	n4->next = n5;
+//	n5->next = n6;
+//	n6->next = n7;
+//	n7->next = n8;
+//	n8->next = n9;
+//	n9->next = n10;
+//	n10->next = NULL;
+//	Node* res = deleteDuplicates(n1);
+//}
+//void test() {
+//	test0();
+//}
+//int main() {
+//	test();
+//	return 0;
+//}
 #endif
